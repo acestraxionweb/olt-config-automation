@@ -1,9 +1,9 @@
 """
 OLT Configuration Verifier
 --------------------------
-Compares the generated OLT configuration files against the original Excel
-site data and produces a discrepancy report (Excel) showing which configs
-are correct, have mismatches, or are missing entirely.
+Compares every generated OLT config file against the original Excel site
+data and produces a discrepancy report (.xlsx) showing which configs are
+correct, have mismatches, or are missing.
 """
 
 import argparse
@@ -11,7 +11,6 @@ import os
 import sys
 
 import pandas as pd
-
 
 PLACEHOLDERS = {"**L", "**PIP", "**TMV", "**MV"}
 
@@ -23,6 +22,7 @@ def verify_configs(
     group_by_district: bool = True,
 ) -> None:
     df = pd.read_excel(excel_path)
+
     required_cols = {"Site Name", "District", "Private IP", "TMVLAN", "MVLAN"}
     missing = required_cols - set(df.columns)
     if missing:

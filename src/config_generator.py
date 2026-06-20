@@ -1,10 +1,9 @@
 """
 OLT Configuration Generator
 ---------------------------
-Reads site data from an Excel spreadsheet and generates per-device OLT
-configuration files by substituting placeholders in a vendor-specific template.
-
-Supported vendors: ZTE (GVGH-16port, GVGO-8port), VSOL
+Reads a single Excel with mixed-vendor sites (ZTE / VSOL) and generates
+per-device configuration files by picking the correct vendor template for
+each row and substituting placeholders.
 """
 
 import argparse
@@ -13,32 +12,48 @@ import sys
 
 import pandas as pd
 
+# Maps the "OLT Type" column value → template filename in the templates directory
+VENDOR_TEMPLATE_MAP = {
+    "ZTE GVGH": "zte_gvgh_16_port.txt",
+    "ZTE GVGO": "zte_gvgo_8_port.txt",
+    "VSOL": "vsol.txt",
+}
 
-def load_template(template_path: str) -> str:
-    with open(template_path, "r") as f:
+
+def load_template(template_dir: str, vendor_key: str) -> str:
+    filename = VENDOR_TEMPLATE_MAP.get(vendor_key)
+    if not filename:
+        valid = ", ".join(VENDOR_TEMPLATE_MAP)
+        sys.exit(f"Unknown OLT Type '{vendor_key}'. Valid values: {valid}")
+    path = os.path.join(template_dir, filename)
+    if not os.path.isfile(path):
+        sys.exit(f"Template file not found: {path}")
+    with open(path, "r") as f:
         return f.read()
 
 
 def generate_configs(
     excel_path: str,
-    template_path: str,
+    template_dir: str,
     output_dir: str,
     group_by_district: bool = True,
 ) -> None:
     df = pd.read_excel(excel_path)
-    template = load_template(template_path)
 
-    required_cols = {"Site Name", "District", "Private IP", "TMVLAN", "MVLAN"}
+    required_cols = {"Site Name", "District", "Private IP", "TMVLAN", "MVLAN", "OLT Type"}
     missing = required_cols - set(df.columns)
     if missing:
         sys.exit(f"Excel missing required columns: {missing}")
 
     for _, row in df.iterrows():
+        vendor = str(row["OLT Type"]).strip()
         district = str(row["District"])
         site_name = str(row["Site Name"])
         private_ip = str(row["Private IP"])
         tm_vlan = str(row["TMVLAN"])
         mv_vlan = str(row["MVLAN"])
+
+        template = load_template(template_dir, vendor)
 
         config = template.replace("**L", site_name)
         config = config.replace("**PIP", private_ip)
@@ -55,7 +70,7 @@ def generate_configs(
         with open(out_path, "w") as f:
             f.write(config)
 
-        print(f"  [OK] {site_name}.txt -> {target}")
+        print(f"  [{vendor}] {site_name}.txt -> {target}")
 
     print(f"\nDone. All configs saved under: {output_dir}")
 
@@ -65,7 +80,7 @@ def main() -> None:
         description="Generate OLT configuration files from Excel site data."
     )
     parser.add_argument("excel", help="Path to the Excel file with site data")
-    parser.add_argument("template", help="Path to the OLT vendor template file")
+    parser.add_argument("templates_dir", help="Directory containing vendor template files")
     parser.add_argument("output", help="Output directory for generated configs")
     parser.add_argument(
         "--flat",
@@ -76,10 +91,10 @@ def main() -> None:
 
     if not os.path.isfile(args.excel):
         sys.exit(f"Excel file not found: {args.excel}")
-    if not os.path.isfile(args.template):
-        sys.exit(f"Template file not found: {args.template}")
+    if not os.path.isdir(args.templates_dir):
+        sys.exit(f"Templates directory not found: {args.templates_dir}")
 
-    generate_configs(args.excel, args.template, args.output, group_by_district=not args.flat)
+    generate_configs(args.excel, args.templates_dir, args.output, group_by_district=not args.flat)
 
 
 if __name__ == "__main__":
