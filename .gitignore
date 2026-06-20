@@ -1,0 +1,31 @@
+# Python bytecode
+__pycache__/
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+.venv/
+
+# IDE / editor
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# OS files
+Thumbs.db
+.DS_Store
+
+# Generated config output
+output/
+
+# Verification reports (generated)
+*_report.xlsx
+
+# Site Excel data (contains sensitive site info)
+*.xlsx
+!sample_data/sample_site_data.xlsx
+
+# Environment / secrets
+.env

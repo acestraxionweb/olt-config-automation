@@ -1,0 +1,1629 @@
+**L# show running-config
+
+Current configuration:
+!
+!Software Version      :                V1.4.6R
+!Software Created Time :                Mon, 22 Jul 2024 16:48:27
+hostname **L
+log trap emergencies
+!
+line vty
+ exec-timeout 0 0
+exit
+!
+security-dos
+dos prevent level off
+exit
+!
+interface aux
+ip address 10.0.0.200 255.255.255.0
+exit
+interface loopback
+ip address 127.0.0.1 255.0.0.0
+ipv6 address ::1/128
+exit
+!
+vlan 1
+exit
+vlan 15
+exit
+vlan 96 - 97
+vlan **TMV
+exit
+vlan **MV
+exit
+vlan 2000 - 2001
+interface vlan 15
+ip address **PIP/22
+exit
+!
+interface vlan 15
+ipv6 address fe80::f:1eef:3ff:fe0f:7e79 link-local
+exit
+interface aux
+exit
+interface vlan 15
+ipv6 nd ra-min-interval 66 ra-max-interval 200
+ipv6 nd ra-hop-limit 64
+ipv6 nd mtu-option
+exit
+!
+!
+!
+!
+!
+interface gigabitethernet 0/1
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gigabitethernet 0/2
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gigabitethernet 0/3
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gigabitethernet 0/4
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gigabitethernet 0/5
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gigabitethernet 0/6
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gigabitethernet 0/7
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gigabitethernet 0/8
+switchport mode hybrid
+switchport hybrid pvid vlan 1
+switchport hybrid vlan 1 untagged
+switchport hybrid vlan 15 tagged
+switchport hybrid vlan 96 - 97 tagged
+switchport hybrid vlan **TMV tagged
+switchport hybrid vlan **MV tagged
+switchport hybrid vlan 2000 - 2001 tagged
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/1
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/2
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/3
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/4
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/5
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/6
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/7
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+interface gpon 0/8
+no shutdown
+mdi force
+storm-control broadcast fps 512
+no storm-control multicast
+storm-control unknow fps 512
+no switchport isolate
+no p2p
+no ip igmp snooping immediate-leave
+exit
+!
+!
+port link-flapping mode auto-recovery
+!
+!
+profile dba id 511 name default1
+type 3 assured 1024 maximum 1024000
+exit
+!
+profile srv id 1 name TM
+portvlan eth 1 mode trunk
+portvlan eth 1 vlan 96,**TMV,2000
+portvlan eth 2 mode trunk
+portvlan eth 2 vlan 96,**TMV,2000
+portvlan eth 3 mode trunk
+portvlan eth 3 vlan 96,**TMV,2000
+portvlan eth 4 mode trunk
+portvlan eth 4 vlan 96,**TMV,2000
+commit
+exit
+!
+profile srv id 2 name MAXIS
+portvlan eth 1 mode trunk
+portvlan eth 1 vlan 97,**MV,2001
+portvlan eth 2 mode trunk
+portvlan eth 2 vlan 97,**MV,2001
+portvlan eth 3 mode trunk
+portvlan eth 3 vlan 97,**MV,2001
+portvlan eth 4 mode trunk
+portvlan eth 4 vlan 97,**MV,2001
+commit
+exit
+!
+profile srv id 3 name TM_2
+portvlan eth 1 mode trunk
+portvlan eth 1 vlan 96,**TMV,2000
+portvlan eth 2 mode trunk
+portvlan eth 2 vlan 96,**TMV,2000
+portvlan eth 3 mode trunk
+portvlan eth 3 vlan 96,**TMV,2000
+portvlan eth 4 mode trunk
+portvlan eth 4 vlan 96,**TMV,2000
+iphost vlan 96 priority 1
+iphost 1 dhcp
+iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+iphost 1 id TM-TR69
+commit
+exit
+!
+profile srv id 4 name Maxis_2
+portvlan eth 1 mode trunk
+portvlan eth 1 vlan 97,**MV,2001
+portvlan eth 2 mode trunk
+portvlan eth 2 vlan 97,**MV,2001
+portvlan eth 3 mode trunk
+portvlan eth 3 vlan 97,**MV,2001
+portvlan eth 4 mode trunk
+portvlan eth 4 vlan 97,**MV,2001
+iphost vlan 97 priority 1
+iphost 1 dhcp
+iphost 1 primary-dns 8.8.8.8 second-dns 1.1.1.1
+iphost 1 id MAXIS-TR69
+commit
+exit
+!
+profile line id 1 name TM
+  tcont 1 name HSI dba default1
+    gemport 1 tcont 1 gemport_name HSI
+      service ser_hsi gemport 1 vlan **TMV
+      service-port 1 gemport 1 uservlan **TMV vlan **TMV
+  tcont 2 name VOIP dba default1
+    gemport 2 tcont 2 gemport_name VOIP
+      service ser_voip gemport 2 vlan 2000
+      service-port 2 gemport 2 uservlan 2000 vlan 2000
+  tcont 3 name TR069 dba default1
+    gemport 3 tcont 3 gemport_name TR069
+      service ser_3 gemport 3 vlan 96
+      service-port 3 gemport 3 uservlan 96 vlan 96
+commit
+exit
+!
+profile line id 2 name MAXIS
+  tcont 1 name HSI dba default1
+    gemport 1 tcont 1 gemport_name HSI
+      service ser_hsi gemport 1 vlan **MV
+      service-port 1 gemport 1 uservlan **MV vlan **MV
+  tcont 2 name VOIP dba default1
+    gemport 2 tcont 2 gemport_name VOIP
+      service ser_voip gemport 2 vlan 2001
+      service-port 2 gemport 2 uservlan 2001 vlan 2001
+  tcont 3 name TR069 dba default1
+    gemport 3 tcont 3 gemport_name TR069
+      service ser_tr069 gemport 3 vlan 97
+      service-port 3 gemport 3 uservlan 97 vlan 97
+commit
+exit
+!
+onu auto-learn bind matching-type exact
+!
+plug_and_play vlan 1
+set variable_vlan disable
+set plug_and_play enable
+!
+interface gpon 0/1
+no onu auto-learn
+plug_and_play enable
+onu add 93 profile default loid EXAMPLEPW93
+onu 93 profile line name TM
+onu 93 profile srv name TM_2
+onu 93 iphost vlan 96 priority 1
+onu 93 iphost 1 dhcp
+onu 93 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 93 iphost 1 id TM-TR69
+onu add 94 profile default loid EXAMPLEPW94
+onu 94 profile line name TM
+onu 94 profile srv name TM_2
+onu 94 iphost vlan 96 priority 1
+onu 94 iphost 1 dhcp
+onu 94 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 94 iphost 1 id TM-TR69
+onu add 95 profile default loid EXAMPLEPW95
+onu 95 profile line name TM
+onu 95 profile srv name TM_2
+onu 95 iphost vlan 96 priority 1
+onu 95 iphost 1 dhcp
+onu 95 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 95 iphost 1 id TM-TR69
+onu add 96 profile default loid EXAMPLEPW96
+onu 96 profile line name TM
+onu 96 profile srv name TM_2
+onu 96 iphost vlan 96 priority 1
+onu 96 iphost 1 dhcp
+onu 96 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 96 iphost 1 id TM-TR69
+onu add 97 profile default loid EXAMPLEPW97
+onu 97 profile line name TM
+onu 97 profile srv name TM_2
+onu 97 iphost vlan 96 priority 1
+onu 97 iphost 1 dhcp
+onu 97 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 97 iphost 1 id TM-TR69
+onu add 98 profile default loid EXAMPLEPW98
+onu 98 profile line name TM
+onu 98 profile srv name TM_2
+onu 98 iphost vlan 96 priority 1
+onu 98 iphost 1 dhcp
+onu 98 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 98 iphost 1 id TM-TR69
+onu add 99 profile default loid EXAMPLEPW99
+onu 99 profile line name TM
+onu 99 profile srv name TM_2
+onu 99 iphost vlan 96 priority 1
+onu 99 iphost 1 dhcp
+onu 99 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 99 iphost 1 id TM-TR69
+onu add 100 profile default loid EXAMPLEPW100
+onu 100 profile line name TM
+onu 100 profile srv name TM_2
+onu 100 iphost vlan 96 priority 1
+onu 100 iphost 1 dhcp
+onu 100 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 100 iphost 1 id TM-TR69
+onu add 101 profile default loid EXAMPLEPW101
+onu 101 profile line name TM
+onu 101 profile srv name TM_2
+onu 101 iphost vlan 96 priority 1
+onu 101 iphost 1 dhcp
+onu 101 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 101 iphost 1 id TM-TR69
+onu add 102 profile default loid EXAMPLEPW102
+onu 102 profile line name TM
+onu 102 profile srv name TM_2
+onu 102 iphost vlan 96 priority 1
+onu 102 iphost 1 dhcp
+onu 102 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 102 iphost 1 id TM-TR69
+onu add 103 profile default loid EXAMPLEPW103
+onu 103 profile line name TM
+onu 103 profile srv name TM_2
+onu 103 iphost vlan 96 priority 1
+onu 103 iphost 1 dhcp
+onu 103 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 103 iphost 1 id TM-TR69
+onu add 104 profile default loid EXAMPLEPW104
+onu 104 profile line name TM
+onu 104 profile srv name TM_2
+onu 104 iphost vlan 96 priority 1
+onu 104 iphost 1 dhcp
+onu 104 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 104 iphost 1 id TM-TR69
+onu add 105 profile default loid EXAMPLEPW105
+onu 105 profile line name TM
+onu 105 profile srv name TM_2
+onu 105 iphost vlan 96 priority 1
+onu 105 iphost 1 dhcp
+onu 105 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 105 iphost 1 id TM-TR69
+onu add 106 profile default loid EXAMPLEPW106
+onu 106 profile line name TM
+onu 106 profile srv name TM_2
+onu 106 iphost vlan 96 priority 1
+onu 106 iphost 1 dhcp
+onu 106 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 106 iphost 1 id TM-TR69
+onu add 107 profile default loid EXAMPLEPW107
+onu 107 profile line name TM
+onu 107 profile srv name TM_2
+onu 107 iphost vlan 96 priority 1
+onu 107 iphost 1 dhcp
+onu 107 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 107 iphost 1 id TM-TR69
+onu add 108 profile default loid EXAMPLEPW108
+onu 108 profile line name TM
+onu 108 profile srv name TM_2
+onu 108 iphost vlan 96 priority 1
+onu 108 iphost 1 dhcp
+onu 108 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 108 iphost 1 id TM-TR69
+onu add 109 profile default loid EXAMPLEPW109
+onu 109 profile line name TM
+onu 109 profile srv name TM_2
+onu 109 iphost vlan 96 priority 1
+onu 109 iphost 1 dhcp
+onu 109 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 109 iphost 1 id TM-TR69
+onu add 110 profile default loid EXAMPLEPW110
+onu 110 profile line name TM
+onu 110 profile srv name TM_2
+onu 110 iphost vlan 96 priority 1
+onu 110 iphost 1 dhcp
+onu 110 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 110 iphost 1 id TM-TR69
+onu add 111 profile default loid EXAMPLEPW111
+onu 111 profile line name TM
+onu 111 profile srv name TM_2
+onu 111 iphost vlan 96 priority 1
+onu 111 iphost 1 dhcp
+onu 111 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 111 iphost 1 id TM-TR69
+onu add 112 profile default loid EXAMPLEPW112
+onu 112 profile line name TM
+onu 112 profile srv name TM_2
+onu 112 iphost vlan 96 priority 1
+onu 112 iphost 1 dhcp
+onu 112 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 112 iphost 1 id TM-TR69
+onu add 113 profile default loid EXAMPLEPW113
+onu 113 profile line name TM
+onu 113 profile srv name TM_2
+onu 113 iphost vlan 96 priority 1
+onu 113 iphost 1 dhcp
+onu 113 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 113 iphost 1 id TM-TR69
+onu add 114 profile default loid EXAMPLEPW114
+onu 114 profile line name TM
+onu 114 profile srv name TM_2
+onu 114 iphost vlan 96 priority 1
+onu 114 iphost 1 dhcp
+onu 114 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 114 iphost 1 id TM-TR69
+onu add 115 profile default loid EXAMPLEPW115
+onu 115 profile line name TM
+onu 115 profile srv name TM_2
+onu 115 iphost vlan 96 priority 1
+onu 115 iphost 1 dhcp
+onu 115 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 115 iphost 1 id TM-TR69
+onu add 116 profile default loid EXAMPLEPW116
+onu 116 profile line name TM
+onu 116 profile srv name TM_2
+onu 116 iphost vlan 96 priority 1
+onu 116 iphost 1 dhcp
+onu 116 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 116 iphost 1 id TM-TR69
+onu add 117 profile default loid EXAMPLEPW117
+onu 117 profile line name TM
+onu 117 profile srv name TM_2
+onu 117 iphost vlan 96 priority 1
+onu 117 iphost 1 dhcp
+onu 117 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 117 iphost 1 id TM-TR69
+onu add 118 profile default loid EXAMPLEPW118
+onu 118 profile line name TM
+onu 118 profile srv name TM_2
+onu 118 iphost vlan 96 priority 1
+onu 118 iphost 1 dhcp
+onu 118 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 118 iphost 1 id TM-TR69
+onu add 119 profile default loid EXAMPLEPW119
+onu 119 profile line name TM
+onu 119 profile srv name TM_2
+onu 119 iphost vlan 96 priority 1
+onu 119 iphost 1 dhcp
+onu 119 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 119 iphost 1 id TM-TR69
+onu add 120 profile default loid EXAMPLEPW120
+onu 120 profile line name TM
+onu 120 profile srv name TM_2
+onu 120 iphost vlan 96 priority 1
+onu 120 iphost 1 dhcp
+onu 120 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 120 iphost 1 id TM-TR69
+onu add 121 profile default loid EXAMPLEPW121
+onu 121 profile line name TM
+onu 121 profile srv name TM_2
+onu 121 iphost vlan 96 priority 1
+onu 121 iphost 1 dhcp
+onu 121 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 121 iphost 1 id TM-TR69
+onu add 122 profile default loid EXAMPLEPW122
+onu 122 profile line name TM
+onu 122 profile srv name TM_2
+onu 122 iphost vlan 96 priority 1
+onu 122 iphost 1 dhcp
+onu 122 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 122 iphost 1 id TM-TR69
+onu add 123 profile default loid EXAMPLEPW123
+onu 123 profile line name TM
+onu 123 profile srv name TM_2
+onu 123 iphost vlan 96 priority 1
+onu 123 iphost 1 dhcp
+onu 123 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 123 iphost 1 id TM-TR69
+onu add 124 profile default loid EXAMPLEPW124
+onu 124 profile line name TM
+onu 124 profile srv name TM_2
+onu 124 iphost vlan 96 priority 1
+onu 124 iphost 1 dhcp
+onu 124 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 124 iphost 1 id TM-TR69
+onu add 125 profile default loid EXAMPLEPW125
+onu 125 profile line name TM
+onu 125 profile srv name TM_2
+onu 125 iphost vlan 96 priority 1
+onu 125 iphost 1 dhcp
+onu 125 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 125 iphost 1 id TM-TR69
+onu add 126 profile default loid EXAMPLEPW126
+onu 126 profile line name TM
+onu 126 profile srv name TM_2
+onu 126 iphost vlan 96 priority 1
+onu 126 iphost 1 dhcp
+onu 126 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 126 iphost 1 id TM-TR69
+onu add 127 profile default loid EXAMPLEPW127
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW128
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+interface gpon 0/2
+no onu auto-learn
+plug_and_play enable
+onu add 93 profile default loid EXAMPLEPW293
+onu 93 profile line name TM
+onu 93 profile srv name TM_2
+onu 93 iphost vlan 96 priority 1
+onu 93 iphost 1 dhcp
+onu 93 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 93 iphost 1 id TM-TR69
+onu add 94 profile default loid EXAMPLEPW294
+onu 94 profile line name TM
+onu 94 profile srv name TM_2
+onu 94 iphost vlan 96 priority 1
+onu 94 iphost 1 dhcp
+onu 94 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 94 iphost 1 id TM-TR69
+onu add 95 profile default loid EXAMPLEPW295
+onu 95 profile line name TM
+onu 95 profile srv name TM_2
+onu 95 iphost vlan 96 priority 1
+onu 95 iphost 1 dhcp
+onu 95 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 95 iphost 1 id TM-TR69
+onu add 96 profile default loid EXAMPLEPW296
+onu 96 profile line name TM
+onu 96 profile srv name TM_2
+onu 96 iphost vlan 96 priority 1
+onu 96 iphost 1 dhcp
+onu 96 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 96 iphost 1 id TM-TR69
+onu add 97 profile default loid EXAMPLEPW297
+onu 97 profile line name TM
+onu 97 profile srv name TM_2
+onu 97 iphost vlan 96 priority 1
+onu 97 iphost 1 dhcp
+onu 97 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 97 iphost 1 id TM-TR69
+onu add 98 profile default loid EXAMPLEPW298
+onu 98 profile line name TM
+onu 98 profile srv name TM_2
+onu 98 iphost vlan 96 priority 1
+onu 98 iphost 1 dhcp
+onu 98 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 98 iphost 1 id TM-TR69
+onu add 99 profile default loid EXAMPLEPW299
+onu 99 profile line name TM
+onu 99 profile srv name TM_2
+onu 99 iphost vlan 96 priority 1
+onu 99 iphost 1 dhcp
+onu 99 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 99 iphost 1 id TM-TR69
+onu add 100 profile default loid EXAMPLEPW200
+onu 100 profile line name TM
+onu 100 profile srv name TM_2
+onu 100 iphost vlan 96 priority 1
+onu 100 iphost 1 dhcp
+onu 100 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 100 iphost 1 id TM-TR69
+onu add 101 profile default loid EXAMPLEPW201
+onu 101 profile line name TM
+onu 101 profile srv name TM_2
+onu 101 iphost vlan 96 priority 1
+onu 101 iphost 1 dhcp
+onu 101 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 101 iphost 1 id TM-TR69
+onu add 102 profile default loid EXAMPLEPW202
+onu 102 profile line name TM
+onu 102 profile srv name TM_2
+onu 102 iphost vlan 96 priority 1
+onu 102 iphost 1 dhcp
+onu 102 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 102 iphost 1 id TM-TR69
+onu add 103 profile default loid EXAMPLEPW203
+onu 103 profile line name TM
+onu 103 profile srv name TM_2
+onu 103 iphost vlan 96 priority 1
+onu 103 iphost 1 dhcp
+onu 103 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 103 iphost 1 id TM-TR69
+onu add 104 profile default loid EXAMPLEPW204
+onu 104 profile line name TM
+onu 104 profile srv name TM_2
+onu 104 iphost vlan 96 priority 1
+onu 104 iphost 1 dhcp
+onu 104 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 104 iphost 1 id TM-TR69
+onu add 105 profile default loid EXAMPLEPW205
+onu 105 profile line name TM
+onu 105 profile srv name TM_2
+onu 105 iphost vlan 96 priority 1
+onu 105 iphost 1 dhcp
+onu 105 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 105 iphost 1 id TM-TR69
+onu add 106 profile default loid EXAMPLEPW206
+onu 106 profile line name TM
+onu 106 profile srv name TM_2
+onu 106 iphost vlan 96 priority 1
+onu 106 iphost 1 dhcp
+onu 106 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 106 iphost 1 id TM-TR69
+onu add 107 profile default loid EXAMPLEPW207
+onu 107 profile line name TM
+onu 107 profile srv name TM_2
+onu 107 iphost vlan 96 priority 1
+onu 107 iphost 1 dhcp
+onu 107 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 107 iphost 1 id TM-TR69
+onu add 108 profile default loid EXAMPLEPW208
+onu 108 profile line name TM
+onu 108 profile srv name TM_2
+onu 108 iphost vlan 96 priority 1
+onu 108 iphost 1 dhcp
+onu 108 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 108 iphost 1 id TM-TR69
+onu add 109 profile default loid EXAMPLEPW209
+onu 109 profile line name TM
+onu 109 profile srv name TM_2
+onu 109 iphost vlan 96 priority 1
+onu 109 iphost 1 dhcp
+onu 109 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 109 iphost 1 id TM-TR69
+onu add 110 profile default loid EXAMPLEPW210
+onu 110 profile line name TM
+onu 110 profile srv name TM_2
+onu 110 iphost vlan 96 priority 1
+onu 110 iphost 1 dhcp
+onu 110 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 110 iphost 1 id TM-TR69
+onu add 111 profile default loid EXAMPLEPW211
+onu 111 profile line name TM
+onu 111 profile srv name TM_2
+onu 111 iphost vlan 96 priority 1
+onu 111 iphost 1 dhcp
+onu 111 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 111 iphost 1 id TM-TR69
+onu add 112 profile default loid EXAMPLEPW212
+onu 112 profile line name TM
+onu 112 profile srv name TM_2
+onu 112 iphost vlan 96 priority 1
+onu 112 iphost 1 dhcp
+onu 112 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 112 iphost 1 id TM-TR69
+onu add 113 profile default loid EXAMPLEPW213
+onu 113 profile line name TM
+onu 113 profile srv name TM_2
+onu 113 iphost vlan 96 priority 1
+onu 113 iphost 1 dhcp
+onu 113 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 113 iphost 1 id TM-TR69
+onu add 114 profile default loid EXAMPLEPW214
+onu 114 profile line name TM
+onu 114 profile srv name TM_2
+onu 114 iphost vlan 96 priority 1
+onu 114 iphost 1 dhcp
+onu 114 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 114 iphost 1 id TM-TR69
+onu add 115 profile default loid EXAMPLEPW215
+onu 115 profile line name TM
+onu 115 profile srv name TM_2
+onu 115 iphost vlan 96 priority 1
+onu 115 iphost 1 dhcp
+onu 115 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 115 iphost 1 id TM-TR69
+onu add 116 profile default loid EXAMPLEPW216
+onu 116 profile line name TM
+onu 116 profile srv name TM_2
+onu 116 iphost vlan 96 priority 1
+onu 116 iphost 1 dhcp
+onu 116 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 116 iphost 1 id TM-TR69
+onu add 117 profile default loid EXAMPLEPW217
+onu 117 profile line name TM
+onu 117 profile srv name TM_2
+onu 117 iphost vlan 96 priority 1
+onu 117 iphost 1 dhcp
+onu 117 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 117 iphost 1 id TM-TR69
+onu add 118 profile default loid EXAMPLEPW218
+onu 118 profile line name TM
+onu 118 profile srv name TM_2
+onu 118 iphost vlan 96 priority 1
+onu 118 iphost 1 dhcp
+onu 118 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 118 iphost 1 id TM-TR69
+onu add 119 profile default loid EXAMPLEPW219
+onu 119 profile line name TM
+onu 119 profile srv name TM_2
+onu 119 iphost vlan 96 priority 1
+onu 119 iphost 1 dhcp
+onu 119 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 119 iphost 1 id TM-TR69
+onu add 120 profile default loid EXAMPLEPW220
+onu 120 profile line name TM
+onu 120 profile srv name TM_2
+onu 120 iphost vlan 96 priority 1
+onu 120 iphost 1 dhcp
+onu 120 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 120 iphost 1 id TM-TR69
+onu add 121 profile default loid EXAMPLEPW221
+onu 121 profile line name TM
+onu 121 profile srv name TM_2
+onu 121 iphost vlan 96 priority 1
+onu 121 iphost 1 dhcp
+onu 121 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 121 iphost 1 id TM-TR69
+onu add 122 profile default loid EXAMPLEPW222
+onu 122 profile line name TM
+onu 122 profile srv name TM_2
+onu 122 iphost vlan 96 priority 1
+onu 122 iphost 1 dhcp
+onu 122 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 122 iphost 1 id TM-TR69
+onu add 123 profile default loid EXAMPLEPW223
+onu 123 profile line name TM
+onu 123 profile srv name TM_2
+onu 123 iphost vlan 96 priority 1
+onu 123 iphost 1 dhcp
+onu 123 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 123 iphost 1 id TM-TR69
+onu add 124 profile default loid EXAMPLEPW224
+onu 124 profile line name TM
+onu 124 profile srv name TM_2
+onu 124 iphost vlan 96 priority 1
+onu 124 iphost 1 dhcp
+onu 124 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 124 iphost 1 id TM-TR69
+onu add 125 profile default loid EXAMPLEPW225
+onu 125 profile line name TM
+onu 125 profile srv name TM_2
+onu 125 iphost vlan 96 priority 1
+onu 125 iphost 1 dhcp
+onu 125 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 125 iphost 1 id TM-TR69
+onu add 126 profile default loid EXAMPLEPW226
+onu 126 profile line name TM
+onu 126 profile srv name TM_2
+onu 126 iphost vlan 96 priority 1
+onu 126 iphost 1 dhcp
+onu 126 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 126 iphost 1 id TM-TR69
+onu add 127 profile default loid EXAMPLEPW227
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW228
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+interface gpon 0/3
+no onu auto-learn
+plug_and_play enable
+onu add 93 profile default loid EXAMPLEPW393
+onu 93 profile line name TM
+onu 93 profile srv name TM_2
+onu 93 iphost vlan 96 priority 1
+onu 93 iphost 1 dhcp
+onu 93 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 93 iphost 1 id TM-TR69
+onu add 94 profile default loid EXAMPLEPW394
+onu 94 profile line name TM
+onu 94 profile srv name TM_2
+onu 94 iphost vlan 96 priority 1
+onu 94 iphost 1 dhcp
+onu 94 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 94 iphost 1 id TM-TR69
+onu add 95 profile default loid EXAMPLEPW395
+onu 95 profile line name TM
+onu 95 profile srv name TM_2
+onu 95 iphost vlan 96 priority 1
+onu 95 iphost 1 dhcp
+onu 95 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 95 iphost 1 id TM-TR69
+onu add 96 profile default loid EXAMPLEPW396
+onu 96 profile line name TM
+onu 96 profile srv name TM_2
+onu 96 iphost vlan 96 priority 1
+onu 96 iphost 1 dhcp
+onu 96 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 96 iphost 1 id TM-TR69
+onu add 97 profile default loid EXAMPLEPW397
+onu 97 profile line name TM
+onu 97 profile srv name TM_2
+onu 97 iphost vlan 96 priority 1
+onu 97 iphost 1 dhcp
+onu 97 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 97 iphost 1 id TM-TR69
+onu add 98 profile default loid EXAMPLEPW398
+onu 98 profile line name TM
+onu 98 profile srv name TM_2
+onu 98 iphost vlan 96 priority 1
+onu 98 iphost 1 dhcp
+onu 98 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 98 iphost 1 id TM-TR69
+onu add 99 profile default loid EXAMPLEPW399
+onu 99 profile line name TM
+onu 99 profile srv name TM_2
+onu 99 iphost vlan 96 priority 1
+onu 99 iphost 1 dhcp
+onu 99 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 99 iphost 1 id TM-TR69
+onu add 100 profile default loid EXAMPLEPW300
+onu 100 profile line name TM
+onu 100 profile srv name TM_2
+onu 100 iphost vlan 96 priority 1
+onu 100 iphost 1 dhcp
+onu 100 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 100 iphost 1 id TM-TR69
+onu add 101 profile default loid EXAMPLEPW301
+onu 101 profile line name TM
+onu 101 profile srv name TM_2
+onu 101 iphost vlan 96 priority 1
+onu 101 iphost 1 dhcp
+onu 101 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 101 iphost 1 id TM-TR69
+onu add 102 profile default loid EXAMPLEPW302
+onu 102 profile line name TM
+onu 102 profile srv name TM_2
+onu 102 iphost vlan 96 priority 1
+onu 102 iphost 1 dhcp
+onu 102 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 102 iphost 1 id TM-TR69
+onu add 103 profile default loid EXAMPLEPW303
+onu 103 profile line name TM
+onu 103 profile srv name TM_2
+onu 103 iphost vlan 96 priority 1
+onu 103 iphost 1 dhcp
+onu 103 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 103 iphost 1 id TM-TR69
+onu add 104 profile default loid EXAMPLEPW304
+onu 104 profile line name TM
+onu 104 profile srv name TM_2
+onu 104 iphost vlan 96 priority 1
+onu 104 iphost 1 dhcp
+onu 104 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 104 iphost 1 id TM-TR69
+onu add 105 profile default loid EXAMPLEPW305
+onu 105 profile line name TM
+onu 105 profile srv name TM_2
+onu 105 iphost vlan 96 priority 1
+onu 105 iphost 1 dhcp
+onu 105 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 105 iphost 1 id TM-TR69
+onu add 106 profile default loid EXAMPLEPW306
+onu 106 profile line name TM
+onu 106 profile srv name TM_2
+onu 106 iphost vlan 96 priority 1
+onu 106 iphost 1 dhcp
+onu 106 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 106 iphost 1 id TM-TR69
+onu add 107 profile default loid EXAMPLEPW307
+onu 107 profile line name TM
+onu 107 profile srv name TM_2
+onu 107 iphost vlan 96 priority 1
+onu 107 iphost 1 dhcp
+onu 107 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 107 iphost 1 id TM-TR69
+onu add 108 profile default loid EXAMPLEPW308
+onu 108 profile line name TM
+onu 108 profile srv name TM_2
+onu 108 iphost vlan 96 priority 1
+onu 108 iphost 1 dhcp
+onu 108 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 108 iphost 1 id TM-TR69
+onu add 109 profile default loid EXAMPLEPW309
+onu 109 profile line name TM
+onu 109 profile srv name TM_2
+onu 109 iphost vlan 96 priority 1
+onu 109 iphost 1 dhcp
+onu 109 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 109 iphost 1 id TM-TR69
+onu add 110 profile default loid EXAMPLEPW310
+onu 110 profile line name TM
+onu 110 profile srv name TM_2
+onu 110 iphost vlan 96 priority 1
+onu 110 iphost 1 dhcp
+onu 110 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 110 iphost 1 id TM-TR69
+onu add 111 profile default loid EXAMPLEPW311
+onu 111 profile line name TM
+onu 111 profile srv name TM_2
+onu 111 iphost vlan 96 priority 1
+onu 111 iphost 1 dhcp
+onu 111 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 111 iphost 1 id TM-TR69
+onu add 112 profile default loid EXAMPLEPW312
+onu 112 profile line name TM
+onu 112 profile srv name TM_2
+onu 112 iphost vlan 96 priority 1
+onu 112 iphost 1 dhcp
+onu 112 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 112 iphost 1 id TM-TR69
+onu add 113 profile default loid EXAMPLEPW313
+onu 113 profile line name TM
+onu 113 profile srv name TM_2
+onu 113 iphost vlan 96 priority 1
+onu 113 iphost 1 dhcp
+onu 113 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 113 iphost 1 id TM-TR69
+onu add 114 profile default loid EXAMPLEPW314
+onu 114 profile line name TM
+onu 114 profile srv name TM_2
+onu 114 iphost vlan 96 priority 1
+onu 114 iphost 1 dhcp
+onu 114 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 114 iphost 1 id TM-TR69
+onu add 115 profile default loid EXAMPLEPW315
+onu 115 profile line name TM
+onu 115 profile srv name TM_2
+onu 115 iphost vlan 96 priority 1
+onu 115 iphost 1 dhcp
+onu 115 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 115 iphost 1 id TM-TR69
+onu add 116 profile default loid EXAMPLEPW316
+onu 116 profile line name TM
+onu 116 profile srv name TM_2
+onu 116 iphost vlan 96 priority 1
+onu 116 iphost 1 dhcp
+onu 116 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 116 iphost 1 id TM-TR69
+onu add 117 profile default loid EXAMPLEPW317
+onu 117 profile line name TM
+onu 117 profile srv name TM_2
+onu 117 iphost vlan 96 priority 1
+onu 117 iphost 1 dhcp
+onu 117 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 117 iphost 1 id TM-TR69
+onu add 118 profile default loid EXAMPLEPW318
+onu 118 profile line name TM
+onu 118 profile srv name TM_2
+onu 118 iphost vlan 96 priority 1
+onu 118 iphost 1 dhcp
+onu 118 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 118 iphost 1 id TM-TR69
+onu add 119 profile default loid EXAMPLEPW319
+onu 119 profile line name TM
+onu 119 profile srv name TM_2
+onu 119 iphost vlan 96 priority 1
+onu 119 iphost 1 dhcp
+onu 119 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 119 iphost 1 id TM-TR69
+onu add 120 profile default loid EXAMPLEPW320
+onu 120 profile line name TM
+onu 120 profile srv name TM_2
+onu 120 iphost vlan 96 priority 1
+onu 120 iphost 1 dhcp
+onu 120 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 120 iphost 1 id TM-TR69
+onu add 121 profile default loid EXAMPLEPW321
+onu 121 profile line name TM
+onu 121 profile srv name TM_2
+onu 121 iphost vlan 96 priority 1
+onu 121 iphost 1 dhcp
+onu 121 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 121 iphost 1 id TM-TR69
+onu add 122 profile default loid EXAMPLEPW322
+onu 122 profile line name TM
+onu 122 profile srv name TM_2
+onu 122 iphost vlan 96 priority 1
+onu 122 iphost 1 dhcp
+onu 122 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 122 iphost 1 id TM-TR69
+onu add 123 profile default loid EXAMPLEPW323
+onu 123 profile line name TM
+onu 123 profile srv name TM_2
+onu 123 iphost vlan 96 priority 1
+onu 123 iphost 1 dhcp
+onu 123 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 123 iphost 1 id TM-TR69
+onu add 124 profile default loid EXAMPLEPW324
+onu 124 profile line name TM
+onu 124 profile srv name TM_2
+onu 124 iphost vlan 96 priority 1
+onu 124 iphost 1 dhcp
+onu 124 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 124 iphost 1 id TM-TR69
+onu add 125 profile default loid EXAMPLEPW325
+onu 125 profile line name TM
+onu 125 profile srv name TM_2
+onu 125 iphost vlan 96 priority 1
+onu 125 iphost 1 dhcp
+onu 125 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 125 iphost 1 id TM-TR69
+onu add 126 profile default loid EXAMPLEPW326
+onu 126 profile line name TM
+onu 126 profile srv name TM_2
+onu 126 iphost vlan 96 priority 1
+onu 126 iphost 1 dhcp
+onu 126 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 126 iphost 1 id TM-TR69
+onu add 127 profile default loid EXAMPLEPW327
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW328
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+interface gpon 0/4
+no onu auto-learn
+plug_and_play enable
+onu add 93 profile default loid EXAMPLEPW493
+onu 93 profile line name TM
+onu 93 profile srv name TM_2
+onu 93 iphost vlan 96 priority 1
+onu 93 iphost 1 dhcp
+onu 93 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 93 iphost 1 id TM-TR69
+onu add 94 profile default loid EXAMPLEPW494
+onu 94 profile line name TM
+onu 94 profile srv name TM_2
+onu 94 iphost vlan 96 priority 1
+onu 94 iphost 1 dhcp
+onu 94 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 94 iphost 1 id TM-TR69
+onu add 95 profile default loid EXAMPLEPW495
+onu 95 profile line name TM
+onu 95 profile srv name TM_2
+onu 95 iphost vlan 96 priority 1
+onu 95 iphost 1 dhcp
+onu 95 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 95 iphost 1 id TM-TR69
+onu add 96 profile default loid EXAMPLEPW496
+onu 96 profile line name TM
+onu 96 profile srv name TM_2
+onu 96 iphost vlan 96 priority 1
+onu 96 iphost 1 dhcp
+onu 96 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 96 iphost 1 id TM-TR69
+onu add 97 profile default loid EXAMPLEPW497
+onu 97 profile line name TM
+onu 97 profile srv name TM_2
+onu 97 iphost vlan 96 priority 1
+onu 97 iphost 1 dhcp
+onu 97 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 97 iphost 1 id TM-TR69
+onu add 98 profile default loid EXAMPLEPW498
+onu 98 profile line name TM
+onu 98 profile srv name TM_2
+onu 98 iphost vlan 96 priority 1
+onu 98 iphost 1 dhcp
+onu 98 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 98 iphost 1 id TM-TR69
+onu add 99 profile default loid EXAMPLEPW499
+onu 99 profile line name TM
+onu 99 profile srv name TM_2
+onu 99 iphost vlan 96 priority 1
+onu 99 iphost 1 dhcp
+onu 99 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 99 iphost 1 id TM-TR69
+onu add 100 profile default loid EXAMPLEPW400
+onu 100 profile line name TM
+onu 100 profile srv name TM_2
+onu 100 iphost vlan 96 priority 1
+onu 100 iphost 1 dhcp
+onu 100 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 100 iphost 1 id TM-TR69
+onu add 101 profile default loid EXAMPLEPW401
+onu 101 profile line name TM
+onu 101 profile srv name TM_2
+onu 101 iphost vlan 96 priority 1
+onu 101 iphost 1 dhcp
+onu 101 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 101 iphost 1 id TM-TR69
+onu add 102 profile default loid EXAMPLEPW402
+onu 102 profile line name TM
+onu 102 profile srv name TM_2
+onu 102 iphost vlan 96 priority 1
+onu 102 iphost 1 dhcp
+onu 102 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 102 iphost 1 id TM-TR69
+onu add 103 profile default loid EXAMPLEPW403
+onu 103 profile line name TM
+onu 103 profile srv name TM_2
+onu 103 iphost vlan 96 priority 1
+onu 103 iphost 1 dhcp
+onu 103 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 103 iphost 1 id TM-TR69
+onu add 104 profile default loid EXAMPLEPW404
+onu 104 profile line name TM
+onu 104 profile srv name TM_2
+onu 104 iphost vlan 96 priority 1
+onu 104 iphost 1 dhcp
+onu 104 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 104 iphost 1 id TM-TR69
+onu add 105 profile default loid EXAMPLEPW405
+onu 105 profile line name TM
+onu 105 profile srv name TM_2
+onu 105 iphost vlan 96 priority 1
+onu 105 iphost 1 dhcp
+onu 105 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 105 iphost 1 id TM-TR69
+onu add 106 profile default loid EXAMPLEPW406
+onu 106 profile line name TM
+onu 106 profile srv name TM_2
+onu 106 iphost vlan 96 priority 1
+onu 106 iphost 1 dhcp
+onu 106 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 106 iphost 1 id TM-TR69
+onu add 107 profile default loid EXAMPLEPW407
+onu 107 profile line name TM
+onu 107 profile srv name TM_2
+onu 107 iphost vlan 96 priority 1
+onu 107 iphost 1 dhcp
+onu 107 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 107 iphost 1 id TM-TR69
+onu add 108 profile default loid EXAMPLEPW408
+onu 108 profile line name TM
+onu 108 profile srv name TM_2
+onu 108 iphost vlan 96 priority 1
+onu 108 iphost 1 dhcp
+onu 108 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 108 iphost 1 id TM-TR69
+onu add 109 profile default loid EXAMPLEPW409
+onu 109 profile line name TM
+onu 109 profile srv name TM_2
+onu 109 iphost vlan 96 priority 1
+onu 109 iphost 1 dhcp
+onu 109 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 109 iphost 1 id TM-TR69
+onu add 110 profile default loid EXAMPLEPW410
+onu 110 profile line name TM
+onu 110 profile srv name TM_2
+onu 110 iphost vlan 96 priority 1
+onu 110 iphost 1 dhcp
+onu 110 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 110 iphost 1 id TM-TR69
+onu add 111 profile default loid EXAMPLEPW411
+onu 111 profile line name TM
+onu 111 profile srv name TM_2
+onu 111 iphost vlan 96 priority 1
+onu 111 iphost 1 dhcp
+onu 111 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 111 iphost 1 id TM-TR69
+onu add 112 profile default loid EXAMPLEPW412
+onu 112 profile line name TM
+onu 112 profile srv name TM_2
+onu 112 iphost vlan 96 priority 1
+onu 112 iphost 1 dhcp
+onu 112 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 112 iphost 1 id TM-TR69
+onu add 113 profile default loid EXAMPLEPW413
+onu 113 profile line name TM
+onu 113 profile srv name TM_2
+onu 113 iphost vlan 96 priority 1
+onu 113 iphost 1 dhcp
+onu 113 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 113 iphost 1 id TM-TR69
+onu add 114 profile default loid EXAMPLEPW414
+onu 114 profile line name TM
+onu 114 profile srv name TM_2
+onu 114 iphost vlan 96 priority 1
+onu 114 iphost 1 dhcp
+onu 114 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 114 iphost 1 id TM-TR69
+onu add 115 profile default loid EXAMPLEPW415
+onu 115 profile line name TM
+onu 115 profile srv name TM_2
+onu 115 iphost vlan 96 priority 1
+onu 115 iphost 1 dhcp
+onu 115 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 115 iphost 1 id TM-TR69
+onu add 116 profile default loid EXAMPLEPW416
+onu 116 profile line name TM
+onu 116 profile srv name TM_2
+onu 116 iphost vlan 96 priority 1
+onu 116 iphost 1 dhcp
+onu 116 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 116 iphost 1 id TM-TR69
+onu add 117 profile default loid EXAMPLEPW417
+onu 117 profile line name TM
+onu 117 profile srv name TM_2
+onu 117 iphost vlan 96 priority 1
+onu 117 iphost 1 dhcp
+onu 117 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 117 iphost 1 id TM-TR69
+onu add 118 profile default loid EXAMPLEPW418
+onu 118 profile line name TM
+onu 118 profile srv name TM_2
+onu 118 iphost vlan 96 priority 1
+onu 118 iphost 1 dhcp
+onu 118 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 118 iphost 1 id TM-TR69
+onu add 119 profile default loid EXAMPLEPW419
+onu 119 profile line name TM
+onu 119 profile srv name TM_2
+onu 119 iphost vlan 96 priority 1
+onu 119 iphost 1 dhcp
+onu 119 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 119 iphost 1 id TM-TR69
+onu add 120 profile default loid EXAMPLEPW420
+onu 120 profile line name TM
+onu 120 profile srv name TM_2
+onu 120 iphost vlan 96 priority 1
+onu 120 iphost 1 dhcp
+onu 120 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 120 iphost 1 id TM-TR69
+onu add 121 profile default loid EXAMPLEPW421
+onu 121 profile line name TM
+onu 121 profile srv name TM_2
+onu 121 iphost vlan 96 priority 1
+onu 121 iphost 1 dhcp
+onu 121 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 121 iphost 1 id TM-TR69
+onu add 122 profile default loid EXAMPLEPW422
+onu 122 profile line name TM
+onu 122 profile srv name TM_2
+onu 122 iphost vlan 96 priority 1
+onu 122 iphost 1 dhcp
+onu 122 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 122 iphost 1 id TM-TR69
+onu add 123 profile default loid EXAMPLEPW423
+onu 123 profile line name TM
+onu 123 profile srv name TM_2
+onu 123 iphost vlan 96 priority 1
+onu 123 iphost 1 dhcp
+onu 123 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 123 iphost 1 id TM-TR69
+onu add 124 profile default loid EXAMPLEPW424
+onu 124 profile line name TM
+onu 124 profile srv name TM_2
+onu 124 iphost vlan 96 priority 1
+onu 124 iphost 1 dhcp
+onu 124 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 124 iphost 1 id TM-TR69
+onu add 125 profile default loid EXAMPLEPW425
+onu 125 profile line name TM
+onu 125 profile srv name TM_2
+onu 125 iphost vlan 96 priority 1
+onu 125 iphost 1 dhcp
+onu 125 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 125 iphost 1 id TM-TR69
+onu add 126 profile default loid EXAMPLEPW426
+onu 126 profile line name TM
+onu 126 profile srv name TM_2
+onu 126 iphost vlan 96 priority 1
+onu 126 iphost 1 dhcp
+onu 126 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 126 iphost 1 id TM-TR69
+onu add 127 profile default loid EXAMPLEPW427
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW428
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+interface gpon 0/5
+no onu auto-learn
+plug_and_play enable
+onu add 127 profile default loid EXAMPLEPW527
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW528
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+interface gpon 0/6
+no onu auto-learn
+plug_and_play enable
+onu add 127 profile default loid EXAMPLEPW627
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW628
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+interface gpon 0/7
+no onu auto-learn
+plug_and_play enable
+onu add 127 profile default loid EXAMPLEPW727
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW728
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+interface gpon 0/8
+no onu auto-learn
+plug_and_play enable
+onu add 127 profile default loid EXAMPLEPW827
+onu 127 profile line name TM
+onu 127 profile srv name TM_2
+onu 127 iphost vlan 96 priority 1
+onu 127 iphost 1 dhcp
+onu 127 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 127 iphost 1 id TM-TR69
+onu add 128 profile default loid EXAMPLEPW828
+onu 128 profile line name TM
+onu 128 profile srv name TM_2
+onu 128 iphost vlan 96 priority 1
+onu 128 iphost 1 dhcp
+onu 128 iphost 1 primary-dns 8.8.8.8 second-dns 8.8.8.8
+onu 128 iphost 1 id TM-TR69
+exit
+!
+!
+!
+remote-protection
+disable
+!
+debug mode
+exit
+!
+ip route 0.0.0.0/0 10.0.0.1
+!
+
+mac address-table mac-flapping
+!
+access-list disable
+!
+access-list ipv6 disable
+login-access-list ipv6 deny snmp ::/0
+login-access-list deny telnet 0.0.0.0 0.0.0.0
+login-access-list ipv6 deny telnet ::/0
+login-access-list ipv6 deny web ::/0
+login-access-list enable
+!
+queue-scheduler strict-priority
+!
+!<RSTP Config Information>
+!
+!<dhcp server config information>
+!<dhcp relay config information>
+dhcp-relay information option disable
+dhcp-relay information strategy keep
+!<tacplus config information>
+!
+!dhcp-snooping configuration
+dhcp-snooping information option disable
+dhcp-snooping information strategy keep
+!<radius config information>
+!
+!<dhcp6 server config information>
+duid duid-llt
+!<dhcp6 relay config information>
+!
+!
+!
+!
+loopback detect enable
+loopback mode auto-recovery
+loopback packet-send vlan-base 1
+!
+crypto key generate rsa usage-keys modulus 2048
+!
+!
+!
+snmp-server start
+snmp-server community public ro
+snmp-server community private rw
+snmp-server community YOUR_SNMP_COMMUNITY rw
+snmp-server notify notify inform inform  inform
+snmp-server notify notify trap trap  trap
+snmp-server host 10.0.0.231 version 2c community YOUR_SNMP_COMMUNITY
+snmp-server host 10.0.0.10 version 2c community public
+snmp-server host 10.0.0.11 version 2c community public
+
+
+
+!
+!
+
+!!!
+
+!!!
+alarm oamlog critical-event enable
+alarm oamlog dying-gasp enable
+alarm oamlog link-fault enable
+alarm oamlog link-event disable
+alarm oamlog organization-specific enable
+!
+debug mode
+web security admin_control enable
+exit
+!
+!
+time zone 08:00
+timezone offset 2
+!
+telnet loging-settings retry-waiting-time enable
+telnet loging-settings retry-waiting-time 60
+!
+!
+role add custom_default permission 682
+!um
+user add admin login-password __REDACTED_HASH__
+user role admin ADMIN enable-password __REDACTED_HASH__
+!<MSTP Config Information>
+spanning-tree mst configuration
+exit
+!
+!
+interface gigabitethernet 0/1
+exit
+!
+interface gigabitethernet 0/2
+exit
+!
+interface gigabitethernet 0/3
+exit
+!
+interface gigabitethernet 0/4
+exit
+!
+interface gigabitethernet 0/5
+exit
+!
+interface gigabitethernet 0/6
+exit
+!
+interface gigabitethernet 0/7
+exit
+!
+interface gigabitethernet 0/8
+exit
+!
+!
+!
+interface vlan 15
+!
+debug mode
+debug ospf6 lsa unknown
+!
+exit
+!
+interface vlan 15
+!
+!
+ntp server 10.0.0.10 10.0.0.11
+!
+!
+**L#
